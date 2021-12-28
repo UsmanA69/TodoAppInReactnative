@@ -88,7 +88,7 @@ const App = () => {
     return (
       <>
         <View style={{alignItems: 'flex-end', paddingHorizontal: 10}}>
-          <Text>{todo.timeAdded}</Text>
+          <Text style={{color:'black'}}>{todo.timeAdded}</Text>
         </View>
         <View style={styles.listItem}>
           <View style={{flex: 1}}>
@@ -184,7 +184,7 @@ const App = () => {
           if (curElem.id === isEdit) {
             return {...curElem, task: textInput};
           }
-          return elem;
+          return curElem;
         }),
       );
       setToggleEditBtn(true);
@@ -306,6 +306,7 @@ const App = () => {
               justifyContent: 'center',
               alignItems: 'center',
               height: '100%',
+              backgroundColor:"grey"
             }}>
             <View>
               <Text
@@ -355,7 +356,7 @@ const App = () => {
                       alignItems: 'center',
                       borderRadius: 5,
                     }}>
-                    <Text>Next</Text>
+                    <Text style={{color:'black'}}>Next</Text>
                   </View>
                 </TouchableOpacity>
               </View>
