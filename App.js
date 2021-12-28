@@ -306,7 +306,7 @@ const App = () => {
               justifyContent: 'center',
               alignItems: 'center',
               height: '100%',
-              backgroundColor:"grey"
+              backgroundColor:"#e0e2e5"
             }}>
             <View>
               <Text
