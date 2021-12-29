@@ -84,7 +84,6 @@ const App = () => {
   }, [todos, userName]);
 
   const ListItem = ({todo}) => {
-    //console.log(todo);
     return (
       <>
         <View style={{alignItems: 'flex-end', paddingHorizontal: 10}}>
@@ -124,8 +123,6 @@ const App = () => {
     );
   };
 
-  //let todosAndName = [{userName},todos]
-  //console.log(todosAndName);
   const getTodosFromUserDevice = async () => {
     try {
       const todos = await AsyncStorage.getItem('todos');
@@ -140,6 +137,7 @@ const App = () => {
       const userName = await AsyncStorage.getItem('name');
       if (userName != null) {
         setUserName(JSON.parse(userName));
+        setShowUserName(JSON.parse(userName))
       }
     } catch (error) {
       Alert.alert('Error', error);
@@ -197,7 +195,6 @@ const App = () => {
         completed: false,
         timeAdded: `${current_date}  ${current_time}`,
       };
-      console.log(newTodo);
       setTodos([...todos, newTodo]);
       setTextInput('');
       setTodosDeleted(false);
@@ -249,7 +246,7 @@ const App = () => {
 
   return (
     <>
-      {showUserName ? (
+      {showUserName != null ? (
         <SafeAreaView style={{flex: 1, backgroundColor: '#e5e7eb'}}>
           <View
             style={{
